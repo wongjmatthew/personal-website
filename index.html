@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Wong | Paid Media & Data Analytics</title>
+    <style>
+        /* Modern, clean, data-focused look */
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        /* Header & Profile Image */
+        header { background-color: var(--dark); color: white; padding: 60px 0; text-align: center; }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            margin-bottom: 20px;
+            background-color: var(--gray); /* Fallback color if no image */
+        }
+        header h1 { margin: 0 0 10px 0; font-size: 3rem; }
+        header p { margin: 0; font-size: 1.2rem; color: #cbd5e1; }
+        
+        section { padding: 50px 0; }
+        h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block; margin-top: 0;}
+        
+        /* Grids & Tags */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;}
+        .skill-tag { background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 20px; font-weight: 500; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s;}
+        .skill-tag:hover { transform: translateY(-2px); border-color: var(--primary); }
+        
+        /* Case Cards */
+        .case-studies { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px; }
+        .case-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); transition: transform 0.3s; }
+        .case-card:hover { transform: translateY(-5px); }
+        .case-card h3 { margin-top: 0; margin-bottom: 5px; color: var(--dark); }
+        .case-card h4 { margin: 0 0 15px 0; color: var(--gray); font-weight: 500; font-size: 1rem; }
+        .case-card ul { padding-left: 20px; margin-top: 10px; margin-bottom: 0; }
+        .case-card li { margin-bottom: 8px; font-size: 0.95rem; }
+        
+        /* Buttons */
+        .contact-links { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
+        .btn { background: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.3s; display: inline-block; margin-top: 15px; font-size: 0.95rem;}
+        .btn:hover { background: #1d4ed8; }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        
+        footer { background: var(--dark); color: #cbd5e1; text-align: center; padding: 20px 0; }
+    </style>
+</head>
+<body>
+
+    <header class="animate">
+        <div class="container">
+            <img src="headshot.jpg" alt="Matthew Wong" class="profile-img">
+            <h1>Matthew Wong</h1>
+            <p>Paid Media & Data Analytics Specialist</p>
+            <p>Bellevue, WA | mjwmatthewwong@gmail.com</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about" class="animate delay-1">
+            <h2>About Me</h2>
+            <p>I am a data-driven digital marketer combining expertise in paid media and data analytics. Graduated Magna Cum Laude with a BBA in Marketing and Management Information Systems, and a minor in Digital Marketing at Gonzaga University. I specialize in translating complex datasets into actionable insights to drive revenue and scale campaigns efficiently across platforms and strategies.</p>
+        </section>
+
+        <section id="skills" class="animate delay-1">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Google Ads & GA4</span>
+                <span class="skill-tag">Microsoft Ads</span>
+                <span class="skill-tag">Meta Ads</span>
+                <span class="skill-tag">A/B Testing</span>
+                <span class="skill-tag">Budget Pacing</span>
+                <span class="skill-tag">Client-Facing Communication</span>
+                <span class="skill-tag">Tableau & Data Visualization</span>
+                <span class="skill-tag">SQL & Python</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">Predictive Modeling</span>
+                <span class="skill-tag">Microsoft Office</span>
+            </div>
+        </section>
+
+        <section id="certifications" class="animate delay-2">
+            <h2>Certifications</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Google Search Ads</span>
+                <span class="skill-tag">Google Shopping Ads</span>
+                <span class="skill-tag">Google Ads Measurement</span>
+                <span class="skill-tag">Google Analytics</span>
+                <span class="skill-tag">Hootsuite Social Media Marketing</span>
+                <span class="skill-tag">Social Listening with Hootsuite</span>
+                <span class="skill-tag">HubSpot Inbound Marketing Certification</span>
+            </div>
+        </section>
+
+        <section id="experience" class="animate delay-3">
+            <h2>Professional Experience</h2>
+            <div class="case-studies" style="grid-template-columns: 1fr;">
+                
+                <div class="case-card">
+                    <h3>Paid Advertising Project Manager</h3>
+                    <h4>Power Digital Marketing | May 2025 – Present</h4>
+                    <ul>
+                        <li><strong>Drove over $500k in revenue at a 9.05x ROAS</strong> for international lifestyle accounts in Q1 by ensuring cross-channel alignment across Search, Performance Max, Demand Gen, and Shopping.</li>
+                        <li><strong>Scaled Q1 revenue +90% YoY</strong> using consolidated campaign structures and strategic budget pacing for a key enterprise client.</li>
+                        <li>Led A/B experiments revealing Broad Match delivered 29% higher revenue and 18% higher ROAS; justified Demand Gen budget expansions by identifying a $5.97 iROAS.</li>
+                    </ul>
+                </div>
+
+                <div class="case-card">
+                    <h3>PPC Intern</h3>
+                    <h4>Power Digital Marketing | Jan 2025 – May 2025</h4>
+                    <ul>
+                        <li>Optimized 5+ Google Ads accounts weekly via keyword audits and campaign restructuring, improving ROAS by an average of 37%.</li>
+                        <li>Contributed to a company-wide capstone project, executing a full-scale cross-departmental marketing plan using Search, Demand Gen, and Performance Max.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="portfolio" class="animate delay-4">
+            <h2>Technical Projects & Case Studies</h2>
+            <div class="case-studies">
+                
+                <div class="case-card">
+                    <h3>Predictive Modeling for Marketing</h3>
+                    <p>Built and compared classification models (Decision Trees, Neural Networks, and Logistic Regression) to predict membership conversions. Recommended actions to target buyers and boost sales revenue using data-driven insights.</p>
+                </div>
+
+                <div class="case-card">
+                    <h3>Barcelona Tourism Trends Analysis</h3>
+                    <p>Analyzed tourism data to identify seasonal peaks, demographic trends, and spending behavior. Formulated actionable marketing and policy recommendations based on findings.</p>
+                </div>
+
+                <div class="case-card">
+                    <h3>AI Job Hunter</h3>
+                    <p>Developed and deployed an interactive AI-powered application to streamline job hunting and resume adjustments.</p>
+                    <a href="https://huggingface.co/spaces/mjwmatthewwong/ai-job-hunter" target="_blank" class="btn">View App</a>
+                </div>
+
+                <div class="case-card">
+                    <h3>Malloy Data Analysis</h3>
+                    <p>A technical data analysis project utilizing Malloy to structure, query, and derive insights from Washington State political compensation data efficiently.</p>
+                    <a href="https://github.com/wongjmatthew/malloy-project-1" target="_blank" class="btn">View Code</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="animate delay-4" style="text-align: center;">
+            <h2>Let's Connect</h2>
+            <p>Looking for a data-driven paid media professional to drive your next phase of growth? Let's talk.</p>
+            <div class="contact-links">
+                <a href="mailto:mjwmatthewwong@gmail.com" class="btn">Email Me</a> 
+                <a href="https://www.linkedin.com/in/mjwmatthewwong" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Matthew Wong. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
