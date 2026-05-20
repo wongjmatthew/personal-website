@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Wong | Paid Media & Data Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Modern, clean, data-focused look */
+        /* Modern, dynamic, data-focused look */
         :root {
             --primary: #2563eb;
-            --dark: #1e293b;
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
+            --dark: #0f172a;
+            --dark-secondary: #1e293b;
             --light: #f8fafc;
             --gray: #64748b;
+            --card-bg: #ffffff;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--dark);
+            color: #334155;
             background-color: var(--light);
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1050px; margin: 0 auto; padding: 0 25px; }
         
         /* Animations */
         @keyframes fadeInUp {
@@ -29,7 +34,7 @@
         }
         .animate {
             opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
@@ -37,44 +42,117 @@
         .delay-4 { animation-delay: 0.8s; }
 
         /* Header & Profile Image */
-        header { background-color: var(--dark); color: white; padding: 60px 0; text-align: center; }
+        header { 
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-secondary) 100%);
+            color: white; 
+            padding: 80px 0 60px 0; 
+            text-align: center; 
+            border-bottom: 4px solid var(--primary);
+        }
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--primary);
-            margin-bottom: 20px;
-            background-color: var(--gray); /* Fallback color if no image */
+            /* This line frames the face instead of the body */
+            object-position: center top; 
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-bottom: 25px;
+            background-color: var(--gray);
+            transition: transform 0.3s ease;
         }
-        header h1 { margin: 0 0 10px 0; font-size: 3rem; }
-        header p { margin: 0; font-size: 1.2rem; color: #cbd5e1; }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        header h1 { margin: 0 0 10px 0; font-size: 3.5rem; font-weight: 700; letter-spacing: -1px; }
+        header p { margin: 0; font-size: 1.25rem; color: #cbd5e1; font-weight: 300;}
         
-        section { padding: 50px 0; }
-        h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block; margin-top: 0;}
+        section { padding: 60px 0; }
+        h2 { 
+            color: var(--dark); 
+            font-size: 2rem;
+            border-bottom: 3px solid var(--primary); 
+            padding-bottom: 8px; 
+            display: inline-block; 
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
         
         /* Grids & Tags */
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;}
-        .skill-tag { background: white; border: 1px solid #e2e8f0; padding: 6px 14px; border-radius: 20px; font-weight: 500; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s;}
-        .skill-tag:hover { transform: translateY(-2px); border-color: var(--primary); }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px;}
+        .skill-tag { 
+            background: var(--primary-light); 
+            color: var(--primary);
+            padding: 8px 18px; 
+            border-radius: 30px; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover { 
+            background: var(--primary); 
+            color: white; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+        }
         
         /* Case Cards */
-        .case-studies { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px; }
-        .case-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); transition: transform 0.3s; }
-        .case-card:hover { transform: translateY(-5px); }
-        .case-card h3 { margin-top: 0; margin-bottom: 5px; color: var(--dark); }
-        .case-card h4 { margin: 0 0 15px 0; color: var(--gray); font-weight: 500; font-size: 1rem; }
+        .case-studies { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 10px; }
+        .case-card { 
+            background: var(--card-bg); 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.05); 
+            border-top: 4px solid transparent; 
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+            display: flex;
+            flex-direction: column;
+        }
+        .case-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+        }
+        .case-card h3 { margin-top: 0; margin-bottom: 8px; color: var(--dark); font-size: 1.4rem;}
+        .case-card h4 { margin: 0 0 15px 0; color: var(--primary); font-weight: 600; font-size: 1rem; }
+        .case-card p { flex-grow: 1; }
         .case-card ul { padding-left: 20px; margin-top: 10px; margin-bottom: 0; }
-        .case-card li { margin-bottom: 8px; font-size: 0.95rem; }
+        .case-card li { margin-bottom: 10px; font-size: 0.95rem; }
         
         /* Buttons */
-        .contact-links { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
-        .btn { background: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.3s; display: inline-block; margin-top: 15px; font-size: 0.95rem;}
-        .btn:hover { background: #1d4ed8; }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: white; }
+        .contact-links { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+        .btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            transition: all 0.2s ease; 
+            display: inline-block; 
+            margin-top: 15px; 
+            font-size: 1rem;
+            text-align: center;
+        }
+        .btn:hover { 
+            background: var(--primary-hover); 
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transform: translateY(-1px);
+        }
+        .btn-outline { 
+            background: transparent; 
+            border: 2px solid var(--primary); 
+            color: var(--primary); 
+        }
+        .btn-outline:hover { 
+            background: var(--primary-light); 
+            color: var(--primary-hover); 
+            border-color: var(--primary-hover);
+            box-shadow: none;
+        }
         
-        footer { background: var(--dark); color: #cbd5e1; text-align: center; padding: 20px 0; }
+        footer { background: var(--dark); color: #cbd5e1; text-align: center; padding: 30px 0; font-size: 0.95rem;}
     </style>
 </head>
 <body>
@@ -84,7 +162,7 @@
             <img src="headshot.jpeg" alt="Matthew Wong" class="profile-img">
             <h1>Matthew Wong</h1>
             <p>Paid Media & Data Analytics Specialist</p>
-            <p>Bellevue, WA | mjwmatthewwong@gmail.com</p>
+            <p style="margin-top: 10px; font-size: 1rem; opacity: 0.8;">Bellevue, WA | mjwmatthewwong@gmail.com</p>
         </div>
     </header>
 
@@ -157,11 +235,13 @@
                 <div class="case-card">
                     <h3>Predictive Modeling for Marketing</h3>
                     <p>Built and compared classification models (Decision Trees, Neural Networks, and Logistic Regression) to predict membership conversions. Recommended actions to target buyers and boost sales revenue using data-driven insights.</p>
+                    <a href="https://colab.research.google.com/drive/1DGjISpAYv8NbGLNle75Cp5wVAoq9kiJC" target="_blank" class="btn">View Notebook</a>
                 </div>
 
                 <div class="case-card">
                     <h3>Barcelona Tourism Trends Analysis</h3>
                     <p>Analyzed tourism data to identify seasonal peaks, demographic trends, and spending behavior. Formulated actionable marketing and policy recommendations based on findings.</p>
+                    <a href="https://colab.research.google.com/drive/1gA9wfSSWrfaKnFTv7k7BEkDldtfquIbH" target="_blank" class="btn">View Notebook</a>
                 </div>
 
                 <div class="case-card">
@@ -183,8 +263,9 @@
             <h2>Let's Connect</h2>
             <p>Looking for a data-driven paid media professional to drive your next phase of growth? Let's talk.</p>
             <div class="contact-links">
-                <a href="mailto:mjwmatthewwong@gmail.com" class="btn">Email Me</a> 
+                <a href="mailto:mjwmatthewwong@gmail.com" class="btn">Email Me!</a> 
                 <a href="https://www.linkedin.com/in/mjwmatthewwong" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+                <a href="https://github.com/wongjmatthew" target="_blank" class="btn btn-outline">Github Profile</a>
             </div>
         </section>
     </div>
